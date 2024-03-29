@@ -12,9 +12,19 @@
                 <div class="book col-md-4">
                     <h2>{{ book.name }}</h2>
                     <p>Автор: {{ book.author }}</p>
-                    <p>Дата публикации: <a href="{% url 'book_date' book.pub_date %}">{{ book.pub_date }}</a></p>
+                    <p>Дата публикации: {{ book.pub_date }}</p>
                 </div>
             {% endfor %}
         </div>
+
+        <br>
+        <
+        <a href = '{% url 'books' %}{{ previous_book }}'> <buttom> {{ previous_book }} &ensp; </buttom></a>
+        <a href = '{% url 'books' %}{{ next_book }}'> <buttom> {{ next_book }} </buttom></a>
+        >
     </div>
+
+
+
 {% endblock %}
+
