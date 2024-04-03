@@ -11,8 +11,7 @@ class RelationshipInlineFormSet(BaseInlineFormSet):
     def clean(self):
         i = 0
         for form in self.forms:
-            dictionary = form.cleaned_data
-            if dictionary.get('is_main'):
+            if form.cleaned_data.get('is_main'):
                 i += 1
             else:
                 continue
