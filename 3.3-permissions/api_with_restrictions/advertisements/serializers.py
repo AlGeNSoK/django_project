@@ -42,8 +42,8 @@ class AdvertisementSerializer(serializers.ModelSerializer):
 
         # TODO: добавьте требуемую валидацию
         request = self.context.get("request")
-        open_adv = Advertisement.objects.filter(creator=self.context.get("request").user).filter(status='open').count()
-        if open_adv >= 10 and request.method == 'POST':
+        open_adv = Advertisement.objects.filter(creator=self.context.get("request").user).filter(status='OPEN').count()
+        if open_adv > 10 and (request.method == 'POST' or data.get('status') == 'OPEN'):
             raise serializers.ValidationError('Превышено количество открытых объявлений')
 
         return data
