@@ -52,9 +52,9 @@ def test_get_list_course(client, course_factory):
 def test_fiter_id_course(client, course_factory):
     courses = course_factory(_quantity=10)
     for i, course in enumerate(courses):
-        response = client.get(url, data={id: course.id})
+        response = client.get(url, data={'id': course.id})
         data = response.json()
-        assert course.id == data[i]['id']
+        assert course.id == data[0]['id']
         assert response.status_code == 200
 
 
@@ -62,9 +62,9 @@ def test_fiter_id_course(client, course_factory):
 def test_fiter_name_course(client, course_factory):
     courses = course_factory(_quantity=10)
     for i, course in enumerate(courses):
-        response = client.get(url, data={id: course.name})
+        response = client.get(url, data={'name': course.name})
         data = response.json()
-        assert course.name == data[i]['name']
+        assert course.name == data[0]['name']
         assert response.status_code == 200
 
 
