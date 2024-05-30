@@ -43,3 +43,11 @@ jobs:
         run: flake8 2.1-databases/work_with_database/phones/ --exclude 2.1-databases/work_with_database/phones/migrations/,2.1-databases/work_with_database/phones/management/
       - name: Тестирование
         run: python 2.1-databases/work_with_database/manage.py test
+        env:
+          ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
+          DB_ENGINE: ${{ env.DB_ENGINE }}
+          DB_NAME: ${{ env.DB_NAME }}
+          DB_HOST: ${{ env.DB_HOST }}
+          DB_PORT: ${{ env.DB_PORT }}
+          DB_USER: ${{ env.DB_USER }}
+          DB_PASSWORD: ${{ env.DB_PASSWORD }}
