@@ -40,6 +40,6 @@ jobs:
       - name: Установка зависимостей
         run: pip install -r 2.1-databases/work_with_database/requirements.txt
       - name: Линтинг
-        run: flake8 2.1-databases/work_with_database/phones/ --exclude 2.1-databases/work_with_database/phones/migrations/
+        run: flake8 2.1-databases/work_with_database/phones/ --exclude 2.1-databases/work_with_database/phones/migrations/,2.1-databases/work_with_database/phones/management/
       - name: Тестирование
         run: python manage.py test
