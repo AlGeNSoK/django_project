@@ -38,7 +38,7 @@ jobs:
         with:
           python-version: '3.10'
       - name: Установка зависимостей
-        run: pip install -r requirements.txt
+        run: pip install -r 2.1-databases/work_with_database/requirements.txt
       - name: Линтинг
         run: flake8 phones/ --exclude phones/migrations/
       - name: Тестирование
