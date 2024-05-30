@@ -1,3 +1,8 @@
-from django.test import TestCase
+from unittest import TestCase
 
-# Create your tests here.
+from rest_framework.test import APIClient
+
+
+class MyTest(TestCase):
+    def test_ok(self):
+        self.assertTrue(True)
